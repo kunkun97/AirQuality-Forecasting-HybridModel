@@ -1,0 +1,238 @@
+/* App.css */
+.app {
+  display: flex;
+}
+
+.sidebar {
+  width: 150px;
+  background-color: #c6cdd3;
+  padding: 20px;
+  height: 100vh; /* Full viewport height */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 15px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #212529;
+  display: flex; /* Sử dụng flexbox để căn chỉnh */
+  align-items: center; /* Căn giữa icon và text theo chiều dọc */
+  gap: 5px; /* Khoảng cách giữa icon và text */
+}
+
+.sidebar a.active {
+  font-weight: bold;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* Màu nền cho MainPage */
+.content.main-page-bg {
+  background-color: #f0f2f2; /* Light Cyan */
+}
+
+.page-header {
+  margin-bottom: 20px;
+}
+
+.breadcrumb {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.station-forecast {
+  border: 2px solid #8c8f92;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #ecf3f5;
+}
+
+.forecast-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.hourly-data {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.hour-block {
+  background-color: #fffacd; /* Màu nền mặc định, sẽ bị override bởi các class màu */
+  border: 1px solid #ced4da; /* Viền mặc định */
+  padding: 10px;
+  margin: 0 10px 0 0; /* Thêm margin-right để tạo khoảng cách giữa các block */
+  text-align: center;
+  flex: 0 0 120px; /* Chiều rộng cố định 120px */
+  height: 100px; /* Chiều cao cố định 100px */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* Căn các text lên đầu */
+}
+
+.hour-block:not(:last-child) {
+  margin-right: 10px;
+}
+
+.time {
+  font-weight: bold;
+}
+
+.value {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.pollutant {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.main-page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.map-container {
+  border: 1px solid #ced4da;
+  padding: 20px;
+  text-align: center;
+}
+
+.map-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.aqi-overview {
+  /* Removed default background and border color */
+  border: 1px solid; /* Border color will be set dynamically */
+  padding: 20px;
+  text-align: center;
+}
+
+.aqi-overview h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.aqi-status {
+  font-weight: bold;
+}
+
+.stations-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.stations-table th,
+.stations-table td {
+  border: 1px solid #ced4da;
+  padding: 10px;
+  /* Căn giữa nội dung trong bảng */
+  text-align: center;
+}
+
+.stations-table th {
+  background-color: #f8f9fa;
+}
+
+.aqi-cell,
+.pollutant-cell {
+  text-align: center;
+}
+
+/* Màu sắc cho AQI - Màu nhạt hơn */
+
+.aqi-cell.aqi-good,
+.aqi-overview.aqi-good {
+  background-color: #e4fddc; /* Light Green */
+  border: 1px
+  border-color: #e4fddc;
+}
+
+.aqi-cell.aqi-moderate,
+.aqi-overview.aqi-moderate {
+  background-color: #fffacd; /* Light Yellow */
+  border: 1px
+  border-color: #fffacd;
+}
+
+.aqi-cell.aqi-unhealthy-for-sensitive-groups,
+.aqi-overview.aqi-unhealthy-for-sensitive-groups {
+  background-color: #ffe4b5; /* Light Orange */
+  border: 1px
+  border-color: #ffe4b5;
+}
+
+.aqi-cell.aqi-unhealthy,
+.aqi-overview.aqi-unhealthy {
+  background-color: #f08080; /* Light Red */
+  border: 1px
+  border-color: #f08080;
+}
+
+.aqi-cell.aqi-very-unhealthy,
+.aqi-overview.aqi-very-unhealthy {
+  background-color: #dda0dd; /* Light Purple */
+  border: 1px
+  border-color: #dda0dd;
+}
+
+.aqi-cell.aqi-hazardous,
+.aqi-overview.aqi-hazardous {
+  background-color: #e9967a; /* Light Maroon */
+  border: 1px
+  border-color: #e9967a;
+}
+
+/* Màu cho ô không có giá trị AQI */
+.aqi-cell:empty {
+  background-color: #d3d3d3; /* Light Gray */
+  border: 1px
+}
+
+/* Màu sắc cho Forecast Page - các box hourly forecast */
+.forecast-aqi-good {
+  background-color: #b1fab1; /* Light Green */
+  border-color: #b1fab1;
+}
+
+.forecast-aqi-moderate {
+  background-color: #fffacd; /* Light Yellow */
+  border-color: #fffacd;
+}
+
+.forecast-aqi-unhealthy-for-sensitive-groups {
+  background-color: #ffe4b5; /* Light Orange */
+  border-color: #ffe4b5;
+}
+
+.forecast-aqi-unhealthy {
+  background-color: #f08080; /* Light Red */
+  border-color: #f08080;
+}
+
+.forecast-aqi-very-unhealthy {
+  background-color: #dda0dd; /* Light Purple */
+  border-color: #dda0dd;
+}
+
+.forecast-aqi-hazardous {
+  background-color: #e9967a; /* Light Maroon */
+  border-color: #e9967a;
+}
